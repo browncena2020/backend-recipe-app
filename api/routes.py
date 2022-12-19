@@ -18,7 +18,7 @@ def update_recipe(id):
 @app.route('/recipe', methods=['POST'])
 def create_recipe():
   data = request.json
-  #print(data)
+
   recipe = Recipe(name=data['name'], ingredients=data['ingredients'], instructions=data['instructions'], rating=data['rating'], favorite=data['favorite'])
   db.session.add(recipe)
   db.session.commit()
